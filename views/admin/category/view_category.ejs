@@ -71,7 +71,22 @@
 </div>
 
 <!-- Category Modal -->
-<%- include('modal_category.ejs') %>
+<%- include('add_modal_category.ejs') %>
+<%- include('edit_modal_category.ejs') %>
 
 <!-- Bootstrap core JavaScript-->
 <%- include('../../partials/js.ejs') %>
+
+<script>
+  $('#dataTable').on('click', '#btn-update', function() {
+    console.log('hai');
+    let id = $(this).data('id');
+    let name = $(this).data('name');
+    console.log({id, name});
+
+    $('#category-id').val(id);
+    $('#edit-category-name').val(name);
+
+    $('#edit-category-modal').modal('show');
+  });
+</script>
