@@ -5,12 +5,10 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/staycation', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+mongoose.connect('mongodb://0.0.0.0:27017/db_staycation')
+  .catch((err) => {
+    console.log('Error connecting to database', err);
+  });
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
