@@ -11,4 +11,7 @@ module.exports = {
   renderViewItem: (req, res) => {
     res.render('admin/item/view_item');
   },
+  renderViewBooking: (req, res) => {
+    res.render('admin/booking/view_booking');
+  },
 };
