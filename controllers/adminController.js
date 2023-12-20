@@ -8,4 +8,7 @@ module.exports = {
   renderViewBank: (req, res) => {
     res.render('admin/bank/view_bank');
   },
+  renderViewItem: (req, res) => {
+    res.render('admin/item/view_item');
+  },
 };
