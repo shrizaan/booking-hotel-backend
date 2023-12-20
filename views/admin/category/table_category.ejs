@@ -15,6 +15,20 @@
                     <th>Action</th>
                 </tr>
                 </thead>
+                <tbody>
+                <!--        use ejs templating engine        -->
+                <% for(var i = 0; i < categories.length; i++) { %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= categories[i].name %></td>
+                        <td>
+                            <a href="/admin/category/edit/<%= categories[i]._id %>" class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit center"></i></a>
+                            <a href="/admin/category/delete/<%= categories[i]._id %>"
+                               class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                <% } %>
+                </tbody>
             </table>
         </div>
     </div>

@@ -4,8 +4,9 @@ module.exports = {
   renderViewDashboard: (req, res) => {
     res.render('admin/dashboard/view_dashboard');
   },
-  renderViewCategory: (req, res) => {
-    res.render('admin/category/view_category');
+  renderViewCategory: async (req, res) => {
+    const categories = await Category.find();
+    res.render('admin/category/view_category', { categories });
   },
   addCategory: async (req, res) => {
     const { categoryName } = req.body;
